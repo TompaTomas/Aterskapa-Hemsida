@@ -19,22 +19,30 @@ body {
 }
 
 .logo img {
-  height: px;
+  height: 25px;
 }
 
-.main-nav ul {
+nav ul {
   display: flex;
   justify-content: center;
   gap: 2rem;
   list-style: none;
-  margin: 0;
   padding: 0;
+  margin: 0;
 }
 
-.main-nav a {
+nav a {
   text-decoration: none;
   color: #111;
   font-weight: bold;
+  font-size: 1rem;
+  text-transform: uppercase;
+  padding: 0.5rem;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #0056b3;
 }
 
 .nav-icons {
@@ -62,42 +70,29 @@ body {
   font-size: 1.5rem;
   font-weight: bold;
 }
-nav {
-  width: 100%;
-}
-
-nav ul {
-  display: flex;
-  justify-content: center;  
-  align-items: center;       
-  gap: 2rem;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.navbar a {
-  text-decoration: none;
-  color: #111;
-  font-weight: bold; 
-  font-size: 1rem;
-}
 
 .hero {
-  background-image: url('assets/STE_1302_XC60_talent_2560x1096.jpg');
-  background-size: cover;
-  background-position: center;
-  height: 90vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  position: relative;
   text-align: center;
+  padding: 0;
+}
+
+.hero-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
 }
 
 .hero-text {
-  background: rgba(255, 255, 255, 0.85);
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0);
   padding: 2rem;
   border-radius: 10px;
+  color: white;
 }
 
 .hero h1 {
@@ -112,11 +107,40 @@ nav ul {
 
 .btn {
   display: inline-block;
-  background-color: black;
-  color: white;
+  background-color: white;
+  color: black;
   padding: 0.75rem 1.5rem;
   border-radius: 50px;
   text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+  border: 2px solid black;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: black;
+  color: white;
+  border-color: black;
+}
+
+.btn.secondary {
+  display: inline-block;
+  background-color: transparent;
+  color: rgb(255, 255, 255);
+  padding: 1rem 2rem;
+  border: 2px solid rgb(255, 255, 255);
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.btn.secondary:hover {
+  background-color: black;
+  color: white;
+  border-color: black;
 }
 
 footer {
@@ -124,6 +148,98 @@ footer {
   padding: 1rem;
   background-color: #f4f4f4;
   font-size: 0.9rem;
+}
+
+.card .btn {
+  display: inline-block;
+  background-color: white;
+  color: black;
+  padding: 1rem 2rem;
+  border: 2px solid black;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.card .btn:hover {
+  background-color: black;
+  color: white;
+  border-color: black;
+}
+
+.cards {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 2rem 0;
+}
+
+.card {
+  background-color: #f4f4f4;
+  padding: 2rem;
+  border-radius: 10px;
+  width: 22%;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card h2 {
+  margin-bottom: 1rem;
+}
+
+.image-section {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  padding: 3rem 0;
+  flex-wrap: wrap;
+}
+
+.image-card {
+  background-color: #f4f4f4;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 30%;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.image-card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.image-description {
+  padding: 1rem;
+}
+
+.image-description h3 {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.image-description p {
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+  color: #555;
+}
+
+.image-description .btn {
+  background-color: transparent;
+  color: black;
+  padding: 0;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+  border: none;
+  transition: text-decoration 0.3s ease;
+}
+
+.image-description .btn:hover {
+  text-decoration: underline;
 }
 
 @media (max-width: 768px) {
@@ -138,5 +254,34 @@ footer {
 
   .hero p {
     font-size: 1rem;
+  }
+
+  .hero-text {
+    width: 90%;
+  }
+
+  .btn {
+    margin-right: 0;
+    margin-bottom: 1rem;
+  }
+
+  .cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 80%;
+    margin-bottom: 1.5rem;
+  }
+
+  .image-section {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .image-card {
+    width: 80%;
+    margin-bottom: 1.5rem;
   }
 }
